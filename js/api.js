@@ -12,7 +12,7 @@ async function post(action, data = {}) {
         const response = await fetch(API_URL, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "text/plain;charset=utf-8"
             },
             body: JSON.stringify({
                 action,
