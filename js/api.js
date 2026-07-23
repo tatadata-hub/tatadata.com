@@ -10,49 +10,33 @@ async function post(action, data = {}) {
     try {
 
         const response = await fetch(API_URL, {
-
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
-
                 action,
-
                 ...data
-
             })
-
         });
 
-        return await response.json();
+        // Lihat isi response dulu
+        const text = await response.text();
+
+        console.log("STATUS:", response.status);
+        console.log("RESPONSE:", text);
+
+        return JSON.parse(text);
 
     } catch (err) {
 
+        console.error(err);
+
         return {
-
             success: false,
-
-            message: "Tidak dapat terhubung ke server."
-
+            message: err.toString()
         };
 
     }
-
-}
-
-// Register
-async function register(data){
-
-    return await post("register", data);
-
-}
-
-// Login
-async function login(data){
-
-    return await post("login", data);
 
 }
