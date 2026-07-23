@@ -4,7 +4,10 @@
 
 const API_URL = "https://script.google.com/macros/s/AKfycbxaHZVffrICrFirgJPz4E6fL7eO9W7-ImJp1vhSA7akhe_5T9KzcLN0qNEegNNARezG/exec";
 
+// ==========================================
 // Generic POST
+// ==========================================
+
 async function post(action, data = {}) {
 
     try {
@@ -20,7 +23,6 @@ async function post(action, data = {}) {
             })
         });
 
-        // Lihat isi response dulu
         const text = await response.text();
 
         console.log("STATUS:", response.status);
@@ -39,4 +41,44 @@ async function post(action, data = {}) {
 
     }
 
+}
+
+// ==========================================
+// REGISTER
+// ==========================================
+
+async function register(data){
+    return await post("register", data);
+}
+
+// ==========================================
+// LOGIN
+// ==========================================
+
+async function login(data){
+    return await post("login", data);
+}
+
+// ==========================================
+// REDEEM
+// ==========================================
+
+async function redeem(data){
+    return await post("redeem", data);
+}
+
+// ==========================================
+// COURSES
+// ==========================================
+
+async function getCourses(data){
+    return await post("courses", data);
+}
+
+// ==========================================
+// PROGRESS
+// ==========================================
+
+async function saveProgress(data){
+    return await post("progress", data);
 }
