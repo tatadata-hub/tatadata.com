@@ -2,7 +2,7 @@
 // TATA-DATA API
 // ==========================================
 
-const API_URL = "https://script.google.com/macros/s/AKfycbxQyjgU5dsi9Q96Y5UsIaVxbu3rnRxWJPZyAxaNkiv5sQSyog7i4aY3Lkc67MZIzAw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxaHZVffrICrFirgJPz4E6fL7eO9W7-ImJp1vhSA7akhe_5T9KzcLN0qNEegNNARezG/exec";
 
 // Generic POST
 async function post(action, data = {}) {
